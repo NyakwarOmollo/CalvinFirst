@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>8 CSS Hover Animation Cards</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #0f0f1a;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 520px);
+      gap: 50px;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .container {
+      width: 483px;
+      height: 298px;
+      background: #676470;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+
+    /* 1. Fade In */
+    .fade {
+      opacity: 0.4;
+    }
+    .fade:hover {
+      opacity: 1;
+    }
+
+    /* 2. Change Color */
+    .color:hover {
+      background: #53a7ea;
+    }
+
+    /* 3. Grow */
+    .grow:hover {
+      transform: scale(1.18);
+    }
+
+    /* 4. Shrink */
+    .shrink:hover {
+      transform: scale(0.82);
+    }
+
+    /* 5. Rotate */
+    .rotate:hover {
+      transform: rotate(-12deg);
+    }
+
+    /* 6. Square to Circle */
+    .circle {
+      border-radius: 12px;
+      transition: border-radius 0.6s ease, transform 0.4s ease;
+    }
+    .circle:hover {
+      border-radius: 50%;
+      transform: scale(1.06);
+    }
+
+    /* 7. 3D Shadow + Lift */
+    .threed {
+      transition: all 0.4s ease;
+    }
+    .threed:hover {
+      transform: translate(-6px, -6px);
+      box-shadow: 
+        6px 6px 0 #53a7ea,
+        12px 12px 0 #53a7ea88,
+        18px 18px 0 #53a7ea44;
+    }
+
+    /* 8. Swing */
+    @keyframes swing {
+      20%  { transform: translateX(6px); }
+      40%  { transform: translateX(-6px); }
+      60%  { transform: translateX(4px); }
+      80%  { transform: translateX(-4px); }
+      100% { transform: translateX(0); }
+    }
+    @-webkit-keyframes swing {
+      20%  { -webkit-transform: translateX(6px); }
+      40%  { -webkit-transform: translateX(-6px); }
+      60%  { -webkit-transform: translateX(4px); }
+      80%  { -webkit-transform: translateX(-4px); }
+      100% { -webkit-transform: translateX(0); }
+    }
+    .swing:hover {
+      animation: swing 0.9s ease;
+      -webkit-animation: swing 0.9s ease;
+    }
+
+    /* Bonus – Inset Border (you can swap it with swing if preferred) */
+    .inset {
+      box-shadow: inset 0 0 0 0 #53a7ea;
+      transition: box-shadow 0.5s ease;
+    }
+    .inset:hover {
+      box-shadow: inset 0 0 0 35px #53a7ea;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container fade">1. Fade In</div>
+  <div class="container color">2. Color Change</div>
+  <div class="container grow">3. Grow</div>
+  <div class="container shrink">4. Shrink</div>
+  <div class="container rotate">5. Rotate</div>
+  <div class="container circle">6. Square → Circle</div>
+  <div class="container threed">7. 3D Shadow + Lift</div>
+  <div class="container swing">8. Swing</div>
+
+  <!-- 
+    Alternative #8 – Inset Border (uncomment if you prefer it over swing)
+    <div class="container inset">8. Inset Border</div>
+  -->
+
+</body>
+</html>
