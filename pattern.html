@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vertical + Horizontal Squares Pattern</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0a0a1f;
+      color: #eee;
+      font-family: system-ui, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+    }
+
+    .pattern-container {
+      width: 100%;
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 3rem 4rem;
+      align-items: start;
+      justify-items: center;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      gap: 1.2rem;
+      align-self: center;
+    }
+
+    .square {
+      width:  100px;
+      height: 100px;
+      background: #f9c74f;     /* yellow */
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      transition: transform 0.2s ease;
+    }
+
+    .square:hover {
+      transform: scale(1.12) rotate(3deg);
+    }
+
+    /* Optional labels (remove if not needed) */
+    .label {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 0.8rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 800px) {
+      .pattern-container {
+        grid-template-columns: 1fr;
+        gap: 3rem 2rem;
+      }
+      .column, .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pattern-container">
+
+    <!-- Left vertical column -->
+    <div class="column">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="label"></div>
+    </div>
+
+    <!-- Center horizontal row -->
+    <div class="row">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="label"></div>
+    </div>
+
+    <!-- Right vertical column -->
+    <div class="column">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="label"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
